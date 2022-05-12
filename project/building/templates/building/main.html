@@ -1,0 +1,22 @@
+{% extends 'building/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class='mt-3'>
+    <div id='alert-box'></div>
+    <form id='p-form' autocomplete="off" >
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type='submit' class='btn btn-primary'>Send</button>
+    </form>
+    <div>
+        <iframe id="viewer"
+        title="viewer"
+        width="700px"
+        height="700px"
+        src="https://playcanv.as/index/5mhxwmyj">
+    </div>
+</div>
+
+{% endblock %}

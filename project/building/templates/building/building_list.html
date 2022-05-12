@@ -1,0 +1,11 @@
+{% extends 'building/base.html' %}
+
+{% block content %}
+
+<h1>物件一覧</h1>
+<a href="{% url 'admin:index' %}">adminサイト</a>
+<a href="{% url 'building:add' %}">建物A</a>
+<a href="{% url 'building:main-view' %}">フォーム</a>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'building/base.html' %}
+
+{% block script %}
+<script>
+    window.addEventListener('DOMContentLoaded', function(){
+
+        let submitbtn = document.getElementById( "submitbtn" );
+        submitbtn.addEventListener('click', function(){
+            // const data = JSON.parse('{{ data_json|safe }}');
+            // console.log(data);
+            let object = '{{ form }}';
+            alert(object);
+        }, false);
+    });
+
+
+</script>
+{% endblock %}
+
+{% block content %}
+<form action="" method='POST'>
+<label for="">タイトル</label>
+{{form.title}}
+<label for="">コメント</label>
+{{form.text}}
+<label for="">日付</label>
+{{form.date}}
+<label for="">座標</label>
+{{form.cordinate}}
+<button type="submit" id='submitbtn'>　送信</button>
+{% csrf_token %}
+</form>
+
+<div>
+    <iframe id="viewer"
+    title="viewer"
+    width="1100px"
+    height="600px"
+    src="https://playcanv.as/index/1H2Uz3fS">
+</div>
+{% endblock %}
